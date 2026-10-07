@@ -54,4 +54,46 @@ public class LinkedList {
         current.next = current.next.next;
         return true;
     }
+
+    public boolean search(int data) {
+
+        Node current = head;
+
+        while (current != null) {
+
+            if (current.data == data) {
+                return true;
+            }
+
+            current = current.next;
+        }
+
+        return false;
+    }
+
+    // Display
+    public void display() {
+
+        if (head == null) {
+            System.out.println("Linked List is empty.");
+            return;
+        }
+
+        Node current = head;
+
+        System.out.print("Linked List: ");
+
+        while (current != null) {
+
+            System.out.print(current.data);
+
+            if (current.next != null) {
+                System.out.print(" -> ");
+            }
+
+            current = current.next;
+        }
+
+        System.out.println();
+    }
 }
